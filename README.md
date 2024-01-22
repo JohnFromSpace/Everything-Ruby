@@ -199,3 +199,4 @@ else
  puts "It's odd"
 end
 ```
+### Blocks and iterators
