@@ -103,3 +103,4 @@ According to the Ruby FAQ, the syntax is similar to Perl's and the semantics are
 * Just-in-time compilation
 
 ## Syntax
+The syntax of the Ruby programming language is broadly similar to that of Perl and Python. Class and method definitions are signaled by keywords, whereas code blocks can be defined by either keywords or braces. In contrast to Perl, variables are not obligatorily prefixed with a sigil. When used, the sigil changes the semantics of scope of the variable. For practical purposes there is no distinction between expressions and statements. Line breaks are significant and taken as the end of a statement; a semicolon may be equivalently used. Unlike Python, indentation is not significant.
