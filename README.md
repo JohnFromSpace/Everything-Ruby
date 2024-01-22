@@ -162,3 +162,4 @@ The following assignments are equivalent and produce raw strings:
 a = 'This is a single-quoted string'
 a = %q{This is a single-quoted string}
 ```
+### Collections
