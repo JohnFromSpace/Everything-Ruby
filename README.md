@@ -189,4 +189,13 @@ end
 hash.delete :water # deletes the pair :water => 'wet' and returns "wet"
 hash.delete_if {|key,value| value == 'hot'} # deletes the pair :fire => 'hot' and returns {}
 ```
-### Control statements
+### Control structures
+If statement:
+```
+# Generate a random number and print whether it's even or odd.
+if rand(100).even?
+ puts "It's even"
+else
+ puts "It's odd"
+end
+```
