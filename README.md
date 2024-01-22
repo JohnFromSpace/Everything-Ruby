@@ -189,3 +189,4 @@ end
 hash.delete :water # deletes the pair :water => 'wet' and returns "wet"
 hash.delete_if {|key,value| value == 'hot'} # deletes the pair :fire => 'hot' and returns {}
 ```
+### Control statements
