@@ -200,3 +200,112 @@ else
 end
 ```
 ### Blocks and iterators
+The two syntaxes for creating a code block:
+```
+{ puts 'Hello, World!' } # note the braces
+# or:
+do
+ puts 'Hello, World!'
+end
+```
+A code block can be passed to a method as an optional block argument. Many built-in methods have such arguments:
+```
+File.open('file.txt', 'w') do |file| # 'w' denotes "write mode"
+ file.puts 'Wrote some text.'
+end # file is automatically closed here
+
+File.readlines('file.txt').each do |line|
+ puts line
+end
+# => Wrote some text.
+```
+Parameter-passing a block to be a closure:
+```
+# In an object instance variable (denoted with '@'), remember a block.
+def remember(&a_block)
+ @block = a_block
+end
+
+# Invoke the preceding method, giving it a block that takes a name.
+remember {|name| puts "Hello, #{name}!"}
+
+# Call the closure (note that this happens not to close over any free variables):
+@block.call('Jon') # => "Hello, Jon!"
+```
+Creating an anonymous function:
+```
+proc {|arg| puts arg}
+Proc.new {|arg| puts arg}
+lambda {|arg| puts arg}
+->(arg) {puts arg} # introduced in Ruby 1.9
+```
+Returning closures from a method:
+```
+def create_set_and_get(initial_value=0) # note the default value of 0
+ closure_value = initial_value
+ [ Proc.new {|x| closure_value = x}, Proc.new { closure_value } ]
+end
+
+setter, getter = create_set_and_get # returns two values
+setter.call(21)
+getter.call # => 21
+
+# Parameter variables can also be used as a binding for the closure,
+# so the preceding can be rewritten as:
+
+def create_set_and_get(closure_value=0)
+ [ proc {|x| closure_value = x } , proc { closure_value } ]
+end
+```
+Yielding the flow of program control to a block that was provided at calling time:
+```
+def use_hello
+ yield "hello"
+end
+
+# Invoke the preceding method, passing it a block.
+use_hello {|string| puts string} # => 'hello'
+```
+Iterating over enumerations and arrays using blocks:
+```
+array = [1, 'hi', 3.14]
+array.each {|item| puts item }
+# prints:
+# 1
+# 'hi'
+# 3.14
+
+array.each_index {|index| puts "#{index}: #{array[index]}" }
+# prints:
+# 0: 1
+# 1: 'hi'
+# 2: 3.14
+
+# The following uses a (a..b) Range
+(3..6).each {|num| puts num }
+# prints:
+# 3
+# 4
+# 5
+# 6
+
+# The following uses a (a...b) Range
+(3...6).each {|num| puts num }
+# prints:
+# 3
+# 4
+# 5
+```
+A method such as inject can accept both a parameter and a block. The inject method iterates over each member of a list, performing some function on it while retaining an aggregate. This is analogous to the foldl function in functional programming languages. For example:
+```
+[1,3,5].inject(10) {|sum, element| sum + element} # => 19
+```
+On the first pass, the block receives 10 (the argument to inject) as sum, and 1 (the first element of the array) as element. This returns 11, which then becomes sum on the next pass. It is added to 3 to get 14, which is then added to 5 on the third pass, to finally return 19.
+
+Using an enumeration and a block to square the numbers 1 to 10 (using a range):
+```
+(1..10).collect {|x| x*x} # => [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+Or invoke a method on each item (map is a synonym for collect):
+
+(1..5).map(&:to_f) # => [1.0, 2.0, 3.0, 4.0, 5.0]
+```
