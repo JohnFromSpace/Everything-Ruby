@@ -20,7 +20,7 @@ In 1999, the first English language mailing list ruby-talk began, which signaled
 <br>
 By 2000, Ruby was more popular than Python in Japan. In September 2000, the first English language book Programming Ruby was printed, which was later freely released to the public, further widening the adoption of Ruby amongst English speakers. In early 2002, the English-language ruby-talk mailing list was receiving more messages than the Japanese-language ruby-list, demonstrating Ruby's increasing popularity in the non-Japanese speaking world. <br>
 
-## Ruby 1.8 and 1.9
+### Ruby 1.8 and 1.9
 Ruby 1.8 was initially released August 2003, was stable for a long time, and was retired June 2013.[22] Although deprecated, there is still code based on it. Ruby 1.8 is only partially compatible with Ruby 1.9. <br>
 
 Ruby 1.8 has been the subject of several industry standards. The language specifications for Ruby were developed by the Open Standards Promotion Center of the Information-Technology Promotion Agency (a Japanese government agency) for submission to the Japanese Industrial Standards Committee (JISC) and then to the International Organization for Standardization (ISO). It was accepted as a Japanese Industrial Standard (JIS X 3017) in 2011 and an international standard (ISO/IEC 30170) in 2012. <br>
@@ -36,7 +36,7 @@ Effective with Ruby 1.9.3, released October 31, 2011, Ruby switched from being d
 * new socket API (IPv6 support)
 * ```require_relative``` import security
 
-## Ruby 2
+### Ruby 2
 Ruby 2.0 was intended to be fully backward compatible with Ruby 1.9.3. As of the official 2.0.0 release on February 24, 2013, there were only five known (minor) incompatibilities. Ruby 2.0 added several new features, including:
 
 * method keyword arguments,
@@ -48,7 +48,7 @@ Starting with 2.1.0, Ruby's versioning policy changed to be more similar to sema
 
 Ruby 2.2.0 includes speed-ups, bugfixes, and library updates and removes some deprecated APIs. Most notably, Ruby 2.2.0 introduces changes to memory handling – an incremental garbage collector, support for garbage collection of symbols and the option to compile directly against jemalloc. It also contains experimental support for using vfork(2) with system() and spawn(), and added support for the Unicode 7.0 specification. Since version 2.2.1, Ruby MRI performance on PowerPC64 was improved. Features that were made obsolete or removed include callcc, the DL library, Digest::HMAC, lib/rational.rb, lib/complex.rb, GServer, Logger::Application as well as various C API functions.
 
-## Ruby 3
+### Ruby 3
 Ruby 3.0.0 was released on Christmas Day in 2020. It is known as Ruby 3x3 which means that programs would run three times faster in Ruby 3.0 comparing to Ruby 2.0. and some had already implemented in intermediate releases on the road from 2 to 3. To achieve 3x3, Ruby 3 comes with MJIT, and later YJIT, Just-In-Time Compilers, to make programs faster, although they are described as experimental and remain disabled by default (enabled by flags at runtime).
 
 Another goal of Ruby 3.0 is to improve concurrency and two more utilities Fibre Scheduler, and experimental Ractor facilitate the goal. Ractor is light-weight and thread-safe as it is achieved by exchanging messages rather than shared objects.
@@ -60,3 +60,5 @@ There are some syntax enhancements and library changes in Ruby 3.0 as well.
 Ruby 3.1 was released on Christmas Day in 2021. It includes YJIT, a new, experimental, Just-In-Time Compiler developed by Shopify, to enhance the performance of real world business applications. A new debugger is also included. There are some syntax enhancements and other improvements in this release. Network libraries for FTP, SMTP, IMAP, and POP are moved from default gems to bundled gems. 
 
 Ruby 3.2 was released on Christmas Day in 2022. It brings support for being run inside of a WebAssembly environment via a WASI interface. Regular expressions also receives some improvements, including a faster, memoized matching algorithm to protect against certain ReDoS attacks, and configurable timeouts for regular expression matching. Additional debugging and syntax features are also included in this release, which include syntax suggestion, as well as error highlighting. The MJIT compiler has been re-implemented as a standard library module, while the YJIT, a Rust-based JIT compiler now supports more architectures on Linux.
+
+## Semantics and philosophy
