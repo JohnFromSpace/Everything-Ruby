@@ -305,7 +305,8 @@ On the first pass, the block receives 10 (the argument to inject) as sum, and 1 
 Using an enumeration and a block to square the numbers 1 to 10 (using a range):
 ```
 (1..10).collect {|x| x*x} # => [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```
 Or invoke a method on each item (map is a synonym for collect):
-
+```
 (1..5).map(&:to_f) # => [1.0, 2.0, 3.0, 4.0, 5.0]
 ```
