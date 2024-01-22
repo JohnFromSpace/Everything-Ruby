@@ -113,3 +113,27 @@ The following examples can be run in a Ruby shell such as Interactive Ruby Shell
 Classic Hello world example:
 
 ```puts 'Hello World!'```
+
+Some basic Ruby code:
+```
+# Everything, including a literal, is an object, so this works:
+-199.abs # => 199
+'ice is nice'.length # => 11
+'ruby is cool.'.index('u') # => 1
+"Nice Day Isn't It?".downcase.split('').uniq.sort.join
+# => " '?acdeinsty"
+```
+Input:
+```
+print 'Please type name >'
+name = gets.chomp
+puts "Hello #{name}."
+```
+Conversions:
+```
+puts 'Give me a number'
+number = gets.chomp
+puts number.to_i
+output_number = number.to_i + 1
+puts output_number.to_s + ' is a bigger number.'
+```
