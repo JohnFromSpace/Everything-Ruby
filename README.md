@@ -59,7 +59,14 @@ There are some syntax enhancements and library changes in Ruby 3.0 as well.
 
 Ruby 3.1 was released on Christmas Day in 2021. It includes YJIT, a new, experimental, Just-In-Time Compiler developed by Shopify, to enhance the performance of real world business applications. A new debugger is also included. There are some syntax enhancements and other improvements in this release. Network libraries for FTP, SMTP, IMAP, and POP are moved from default gems to bundled gems. 
 
+## Semantics and philosophy
+Ruby is object-oriented: every value is an object, including classes and instances of types that many other languages designate as primitives (such as integers, booleans, and "null"). Variables always hold references to objects. Every function is a method and methods are always called on an object. Methods defined at the top level scope become methods of the Object class. Since this class is an ancestor of every other class, such methods can be called on any object. They are also visible in all scopes, effectively serving as "global" procedures. Ruby supports inheritance with dynamic dispatch, mixins and singleton methods (belonging to, and defined for, a single instance rather than being defined on the class). Though Ruby does not support multiple inheritance, classes can import modules as mixins.
+
+Ruby has been described as a multi-paradigm programming language: it allows procedural programming (defining functions/variables outside classes makes them part of the root, 'self' Object), with object orientation (everything is an object) or functional programming (it has anonymous functions, closures, and continuations; statements all have values, and functions return the last evaluation). It has support for introspection, reflection and metaprogramming, as well as support for interpreter-based threads. Ruby features dynamic typing, and supports parametric polymorphism.
+
+According to the Ruby FAQ, the syntax is similar to Perl's and the semantics are similar to Smalltalk's, but the design philosophy differs greatly from Python's.
 Ruby 3.2 was released on Christmas Day in 2022. It brings support for being run inside of a WebAssembly environment via a WASI interface. Regular expressions also receives some improvements, including a faster, memoized matching algorithm to protect against certain ReDoS attacks, and configurable timeouts for regular expression matching. Additional debugging and syntax features are also included in this release, which include syntax suggestion, as well as error highlighting. The MJIT compiler has been re-implemented as a standard library module, while the YJIT, a Rust-based JIT compiler now supports more architectures on Linux.
+
 
 ## Semantics and philosophy
 Ruby is object-oriented: every value is an object, including classes and instances of types that many other languages designate as primitives (such as integers, booleans, and "null"). Variables always hold references to objects. Every function is a method and methods are always called on an object. Methods defined at the top level scope become methods of the Object class. Since this class is an ancestor of every other class, such methods can be called on any object. They are also visible in all scopes, effectively serving as "global" procedures. Ruby supports inheritance with dynamic dispatch, mixins and singleton methods (belonging to, and defined for, a single instance rather than being defined on the class). Though Ruby does not support multiple inheritance, classes can import modules as mixins.
@@ -67,3 +74,30 @@ Ruby is object-oriented: every value is an object, including classes and instanc
 Ruby has been described as a multi-paradigm programming language: it allows procedural programming (defining functions/variables outside classes makes them part of the root, 'self' Object), with object orientation (everything is an object) or functional programming (it has anonymous functions, closures, and continuations; statements all have values, and functions return the last evaluation). It has support for introspection, reflection and metaprogramming, as well as support for interpreter-based threads. Ruby features dynamic typing, and supports parametric polymorphism.
 
 According to the Ruby FAQ, the syntax is similar to Perl's and the semantics are similar to Smalltalk's, but the design philosophy differs greatly from Python's.
+
+## Features
+* Thoroughly object-oriented with inheritance, mixins and metaclasses
+* Dynamic typing and duck typing
+* Everything is an expression (even statements) and everything is executed imperatively (even declarations)
+* Succinct and flexible syntax that minimizes syntactic noise and serves as a foundation for domain-specific languages
+* Dynamic reflection and alteration of objects to facilitate metaprogramming
+* Lexical closures, iterators and generators, with a block syntax
+* Literal notation for arrays, hashes, regular expressions and symbols
+* Embedding code in strings (interpolation)
+* Default arguments
+* Four levels of variable scope (global, class, instance, and local) denoted by sigils or the lack thereof
+* Garbage collection
+* First-class continuations
+* Strict boolean coercion rules (everything is *true* except ```false``` and ```nil```)
+* Exception handling
+* Operator overloading
+* Built-in support for rational numbers, complex numbers and arbitrary-precision arithmetic
+* Custom dispatch behavior (through ```method_missing``` and ```const_missing```)
+* Native threads and cooperative fibers (fibers are a 1.9/YARV feature)
+* Support for Unicode and multiple character encodings.
+* Native plug-in API in C
+* Interactive Ruby Shell, an interactive command-line interpreter that can be used to test code quickly (REPL)
+* Centralized package management through RubyGems
+* Implemented on all major platforms
+* Large standard library, including modules for YAML, JSON, XML, CGI, OpenSSL, HTTP, FTP, RSS, curses, zlib and Tk
+* Just-in-time compilation
