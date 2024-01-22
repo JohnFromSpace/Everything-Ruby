@@ -138,3 +138,27 @@ output_number = number.to_i + 1
 puts output_number.to_s + ' is a bigger number.'
 ```
 ### Strings
+There are a variety of ways to define strings in Ruby.
+
+The following assignments are equivalent:
+```
+a = "\nThis is a double-quoted string\n"
+a = %Q{\nThis is a double-quoted string\n}
+a = %{\nThis is a double-quoted string\n}
+a = %/\nThis is a double-quoted string\n/
+a = <<-BLOCK
+
+This is a double-quoted string
+BLOCK
+```
+Strings support variable interpolation:
+```
+var = 3.14159
+"pi is #{var}"
+=> "pi is 3.14159"
+```
+The following assignments are equivalent and produce raw strings:
+```
+a = 'This is a single-quoted string'
+a = %q{This is a single-quoted string}
+```
