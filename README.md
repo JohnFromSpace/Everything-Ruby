@@ -163,3 +163,29 @@ a = 'This is a single-quoted string'
 a = %q{This is a single-quoted string}
 ```
 ### Collections
+Constructing and using an array:
+```
+a = [3, 'hello', 14.5, 1, 2, [6, 15]]
+
+a[2] # => 14.5
+a.[](2) # => 14.5
+a.reverse # => [[6, 15], 2, 1, 14.5, 'hello', 3]
+a.flatten.uniq # => [3, 'hello', 14.5, 1, 2, 6, 15]
+```
+Constructing and using an associative array (in Ruby, called a hash):
+```
+hash = Hash.new # equivalent to hash = {}
+hash = { water: 'wet', fire: 'hot' } # makes the previous line redundant as we are now
+ # assigning hash to a new, separate hash object
+puts hash[:fire] # prints "hot"
+
+hash.each_pair do |key, value| # or: hash.each do |key, value|
+ puts "#{key} is #{value}"
+end
+# returns {:water=>"wet", :fire=>"hot"} and prints:
+# water is wet
+# fire is hot
+
+hash.delete :water # deletes the pair :water => 'wet' and returns "wet"
+hash.delete_if {|key,value| value == 'hot'} # deletes the pair :fire => 'hot' and returns {}
+```
