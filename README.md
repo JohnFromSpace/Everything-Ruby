@@ -108,3 +108,8 @@ The syntax of the Ruby programming language is broadly similar to that of Perl a
 One of the differences from Python and Perl is that Ruby keeps all of its instance variables completely private to the class and only exposes them through accessor methods (```attr_writer```, ```attr_reader```, etc.). Unlike the "getter" and "setter" methods of other languages like C++ or Java, accessor methods in Ruby can be created with a single line of code via metaprogramming; however, accessor methods can also be created in the traditional fashion of C++ and Java. As invocation of these methods does not require the use of parentheses, it is trivial to change an instance variable into a full function without modifying a single line of calling code or having to do any refactoring achieving similar functionality to C# and VB.NET property members.
 
 ### Interactive sessions
+The following examples can be run in a Ruby shell such as Interactive Ruby Shell, or saved in a file and run from the command line by typing ruby ```<filename>```.
+
+Classic Hello world example:
+
+```puts 'Hello World!'```
