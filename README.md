@@ -35,3 +35,15 @@ Effective with Ruby 1.9.3, released October 31, 2011, Ruby switched from being d
 * per-string character encodings are supported
 * new socket API (IPv6 support)
 * ```require_relative``` import security
+
+## Ruby 2
+Ruby 2.0 was intended to be fully backward compatible with Ruby 1.9.3. As of the official 2.0.0 release on February 24, 2013, there were only five known (minor) incompatibilities. Ruby 2.0 added several new features, including:
+
+* method keyword arguments,
+* a new method, ```Module#prepend```, for extending a class,
+* a new literal for creating an array of symbols,
+* new API for the lazy evaluation of Enumerables, and
+* a new convention of using #to_h to convert objects to Hashes.
+Starting with 2.1.0, Ruby's versioning policy changed to be more similar to semantic versioning.
+
+Ruby 2.2.0 includes speed-ups, bugfixes, and library updates and removes some deprecated APIs. Most notably, Ruby 2.2.0 introduces changes to memory handling – an incremental garbage collector, support for garbage collection of symbols and the option to compile directly against jemalloc. It also contains experimental support for using vfork(2) with system() and spawn(), and added support for the Unicode 7.0 specification. Since version 2.2.1, Ruby MRI performance on PowerPC64 was improved. Features that were made obsolete or removed include callcc, the DL library, Digest::HMAC, lib/rational.rb, lib/complex.rb, GServer, Logger::Application as well as various C API functions.
