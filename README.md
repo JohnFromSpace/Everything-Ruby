@@ -67,3 +67,4 @@ Ruby has been described as a multi-paradigm programming language: it allows proc
 According to the Ruby FAQ, the syntax is similar to Perl's and the semantics are similar to Smalltalk's, but the design philosophy differs greatly from Python's.
 Ruby 3.2 was released on Christmas Day in 2022. It brings support for being run inside of a WebAssembly environment via a WASI interface. Regular expressions also receives some improvements, including a faster, memoized matching algorithm to protect against certain ReDoS attacks, and configurable timeouts for regular expression matching. Additional debugging and syntax features are also included in this release, which include syntax suggestion, as well as error highlighting. The MJIT compiler has been re-implemented as a standard library module, while the YJIT, a Rust-based JIT compiler now supports more architectures on Linux.
 
+## Features
