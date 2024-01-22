@@ -101,3 +101,5 @@ According to the Ruby FAQ, the syntax is similar to Perl's and the semantics are
 * Implemented on all major platforms
 * Large standard library, including modules for YAML, JSON, XML, CGI, OpenSSL, HTTP, FTP, RSS, curses, zlib and Tk
 * Just-in-time compilation
+
+## Syntax
