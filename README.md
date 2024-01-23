@@ -310,3 +310,34 @@ Or invoke a method on each item (map is a synonym for collect):
 ```
 (1..5).map(&:to_f) # => [1.0, 2.0, 3.0, 4.0, 5.0]
 ```
+### Classes
+The following code defines a class named ```Person```. In addition to ```initialize```, the usual constructor to create new objects, it has two methods: one to override the ```<=>``` comparison operator (so ```Array#sort``` can sort by age) and the other to override the ```to_s``` method (so ```Kernel#puts``` can format its output). Here, ```attr_reader``` is an example of metaprogramming in Ruby: ```attr_accessor``` defines getter and setter methods of instance variables, but attr_reader only getter methods. The last evaluated statement in a method is its return value, allowing the omission of an explicit ```return``` statement.
+```
+class Person
+ attr_reader :name, :age
+ def initialize(name, age)
+ @name, @age = name, age
+ end
+ def <=>(person) # the comparison operator for sorting
+ @age <=> person.age
+ end
+ def to_s
+ "#{@name} (#{@age})"
+ end
+end
+
+group = [
+ Person.new("Bob", 33),
+ Person.new("Chris", 16),
+ Person.new("Ash", 23)
+]
+
+puts group.sort.reverse
+```
+The preceding code prints three names in reverse age order:
+```
+Bob (33)
+Ash (23)
+Chris (16)
+```
+```Person``` is a constant and is a reference to a ```Class``` object.
