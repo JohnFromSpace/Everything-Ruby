@@ -488,3 +488,5 @@ Some other possible uses for Ruby metaprogramming include:
 * dynamically generating classes from parameters
 * automatic object serialization
 * interactive help and debugging
+
+## Implementations
