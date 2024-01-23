@@ -453,3 +453,38 @@ rescue RuntimeError, Timeout::Error => e
 end
 ```
 ### Metaprogramming
+Ruby code can programmatically modify, at runtime, aspects of its own structure that would be fixed in more rigid languages, such as class and method definitions. This sort of metaprogramming can be used to write more concise code and effectively extend the language.
+
+For example, the following Ruby code generates new methods for the built-in ```String``` class, based on a list of colors. The methods wrap the contents of the string with an HTML tag styled with the respective color.
+```
+COLORS = { black: "000",
+ red: "f00",
+ green: "0f0",
+ yellow: "ff0",
+ blue: "00f",
+ magenta: "f0f",
+ cyan: "0ff",
+ white: "fff" }
+
+class String
+ COLORS.each do |color,code|
+ define_method "in_#{color}" do
+ "<span style=\"color: ##{code}\">#{self}</span>"
+ end
+ end
+end
+```
+The generated methods could then be used like this:
+```
+"Hello, World!".in_blue
+ => "<span style=\"color: #00f\">Hello, World!</span>"
+```
+To implement the equivalent in many other languages, the programmer would have to write each method (```in_black```, ```in_red```, ```in_green```, etc.) separately.
+
+Some other possible uses for Ruby metaprogramming include:
+
+* intercepting and modifying method calls
+* implementing new inheritance models
+* dynamically generating classes from parameters
+* automatic object serialization
+* interactive help and debugging
