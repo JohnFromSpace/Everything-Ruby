@@ -341,3 +341,40 @@ Ash (23)
 Chris (16)
 ```
 ```Person``` is a constant and is a reference to a ```Class``` object.
+### Open classes
+In Ruby, classes are never closed: methods can always be added to an existing class. This applies to all classes, including the standard, built-in classes. All that is needed to do is open up a class definition for an existing class, and the new contents specified will be added to the existing contents. A simple example of adding a new method to the standard library's ```Time``` class:
+```
+# re-open Ruby's Time class
+class Time
+ def yesterday
+   self - 86400
+ end
+end
+
+today = Time.now # => 2013-09-03 16:09:37 +0300
+yesterday = today.yesterday # => 2013-09-02 16:09:37 +0300
+```
+Adding methods to previously defined classes is often called monkey-patching. If performed recklessly, the practice can lead to both behavior collisions with subsequent unexpected results and code scalability problems.
+
+Since Ruby 2.0 it has been possible to use refinements to reduce the potentially negative consequences of monkey-patching, by limiting the scope of the patch to particular areas of the code base.
+```
+# re-open Ruby's Time class
+module RelativeTimeExtensions
+ refine Time do
+   def half_a_day_ago
+     self - 43200
+   end
+ end
+end
+
+module MyModule
+ class MyClass
+   # Allow the refinement to be used
+   using RelativeTimeExtensions
+
+   def window
+     Time.now.half_a_day_ago
+   end
+ end
+end
+```
