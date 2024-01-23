@@ -378,3 +378,4 @@ module MyModule
  end
 end
 ```
+### Exceptions
