@@ -490,3 +490,9 @@ Some other possible uses for Ruby metaprogramming include:
 * interactive help and debugging
 
 ## Implementations
+### Matz's Ruby interpreter
+The original Ruby interpreter is often referred to as Matz's Ruby Interpreter or MRI. This implementation is written in C and uses its own Ruby-specific virtual machine.
+
+The standardized and retired Ruby 1.8 implementation was written in C, as a single-pass interpreted language.
+
+Starting with Ruby 1.9, and continuing with Ruby 2.x and above, the official Ruby interpreter has been YARV ("Yet Another Ruby VM"), and this implementation has superseded the slower virtual machine used in previous releases of MRI.
