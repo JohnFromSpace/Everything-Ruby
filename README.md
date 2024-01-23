@@ -379,3 +379,76 @@ module MyModule
 end
 ```
 ### Exceptions
+An exception is raised with a ```raise``` call:
+```
+raise
+```
+An optional message can be added to the exception:
+```
+raise "This is a message"
+```
+Exceptions can also be specified by the programmer:
+```
+raise ArgumentError, "Illegal arguments!"
+```
+Alternatively, an exception instance can be passed to the ```raise``` method:
+```
+raise ArgumentError.new("Illegal arguments!")
+```
+This last construct is useful when raising an instance of a custom exception class featuring a constructor that takes more than one argument:
+```
+class ParseError < Exception
+ def initialize(input, line, pos)
+ super "Could not parse '#{input}' at line #{line}, position #{pos}"
+ end
+end
+
+raise ParseError.new("Foo", 3, 9)
+```
+Exceptions are handled by the ```rescue``` clause. Such a clause can catch exceptions that inherit from ```StandardError```. Other flow control keywords that can be used when handling exceptions are else and ensure:
+```
+begin
+ # do something
+rescue
+ # handle exception
+else
+ # do this if no exception was raised
+ensure
+ # do this whether or not an exception was raised
+end
+```
+It is a common mistake to attempt to catch all exceptions with a simple rescue clause. To catch all exceptions one must write:
+```
+begin
+ # do something
+rescue Exception
+ # Exception handling code here.
+ # Don't write only "rescue"; that only catches StandardError, a subclass of Exception.
+end
+```
+Or catch particular exceptions:
+```
+begin
+ # do something
+rescue RuntimeError
+ # handle only RuntimeError and its subclasses
+end
+```
+It is also possible to specify that the exception object be made available to the handler clause:
+```
+begin
+ # do something
+rescue RuntimeError => e
+ # handling, possibly involving e, such as "puts e.to_s"
+end
+```
+Alternatively, the most recent exception is stored in the magic global ```$!```.
+
+Several exceptions can also be caught:
+```
+begin
+ # do something
+rescue RuntimeError, Timeout::Error => e
+ # handling, possibly involving e
+end
+```
