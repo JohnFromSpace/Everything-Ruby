@@ -510,7 +510,7 @@ Other Ruby implementations include:
 MagLev, a Smalltalk implementation that runs on GemTalk Systems' GemStone/S VM
 mruby, an implementation designed to be embedded into C code, in a similar vein to Lua. It is currently being developed by Yukihiro Matsumoto and others
 RGSS, or Ruby Game Scripting System, a proprietary implementation that is used by the RPG Maker series of software for game design and modification of the RPG Maker engine
-julializer, a transpiler (partial) from Ruby to Julia. It can be used for a large speedup over e.g. Ruby or JRuby implementations (may only be useful for numerical code).[60]
+julializer, a transpiler (partial) from Ruby to Julia. It can be used for a large speedup over e.g. Ruby or JRuby implementations (may only be useful for numerical code).
 Topaz, a Ruby implementation written in Python
 Opal, a web-based interpreter that compiles Ruby to JavaScript
 Other now defunct Ruby implementations were:
@@ -521,3 +521,5 @@ Cardinal, an implementation for the Parrot virtual machine
 Ruby Enterprise Edition, often shortened to ree, an implementation optimized to handle large-scale Ruby on Rails projects
 HotRuby, a JavaScript and ActionScript implementation of the Ruby programming language
 The maturity of Ruby implementations tends to be measured by their ability to run the Ruby on Rails (Rails) framework, because it is complex to implement and uses many Ruby-specific features. The point when a particular implementation achieves this goal is called "the Rails singularity". The reference implementation, JRuby, and Rubinius[61] are all able to run Rails unmodified in a production environment.
+
+### Platform support
