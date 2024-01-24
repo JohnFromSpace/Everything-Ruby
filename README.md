@@ -520,6 +520,9 @@ IronRuby an implementation on the .NET Framework
 Cardinal, an implementation for the Parrot virtual machine
 Ruby Enterprise Edition, often shortened to ree, an implementation optimized to handle large-scale Ruby on Rails projects
 HotRuby, a JavaScript and ActionScript implementation of the Ruby programming language
-The maturity of Ruby implementations tends to be measured by their ability to run the Ruby on Rails (Rails) framework, because it is complex to implement and uses many Ruby-specific features. The point when a particular implementation achieves this goal is called "the Rails singularity". The reference implementation, JRuby, and Rubinius[61] are all able to run Rails unmodified in a production environment.
+The maturity of Ruby implementations tends to be measured by their ability to run the Ruby on Rails (Rails) framework, because it is complex to implement and uses many Ruby-specific features. The point when a particular implementation achieves this goal is called "the Rails singularity". The reference implementation, JRuby, and Rubinius are all able to run Rails unmodified in a production environment.
 
 ### Platform support
+Matsumoto originally developed Ruby on the 4.3BSD-based Sony NEWS-OS 3.x, but later migrated his work to SunOS 4.x, and finally to Linux. By 1999, Ruby was known to work across many different operating systems. Modern Ruby versions and implementations are available on all major desktop, mobile and server-based operating systems. Ruby is also supported across a number of cloud hosting platforms like Jelastic, Heroku, Google Cloud Platform and others.
+
+Tools such as RVM and RBEnv, facilitate installation and partitioning of multiple ruby versions, and multiple 'gemsets' on one machine.
