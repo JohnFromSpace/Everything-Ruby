@@ -498,3 +498,26 @@ The standardized and retired Ruby 1.8 implementation was written in C, as a sing
 Starting with Ruby 1.9, and continuing with Ruby 2.x and above, the official Ruby interpreter has been YARV ("Yet Another Ruby VM"), and this implementation has superseded the slower virtual machine used in previous releases of MRI.
 
 ### Alternative implementations
+As of 2018, there are a number of alternative implementations of Ruby, including JRuby, Rubinius, and mruby. Each takes a different approach, with JRuby and Rubinius providing just-in-time compilation and mruby also providing ahead-of-time compilation.
+
+Ruby has three major alternative implementations:
+
+JRuby, a mixed Java and Ruby implementation that runs on the Java virtual machine. JRuby currently targets Ruby 3.1.x.
+TruffleRuby, a Java implementation using the Truffle language implementation framework with GraalVM
+Rubinius, a C++ bytecode virtual machine that uses LLVM to compile to machine code at runtime. The bytecode compiler and most core classes are written in pure Ruby. Rubinius currently targets Ruby 2.3.1.
+Other Ruby implementations include:
+
+MagLev, a Smalltalk implementation that runs on GemTalk Systems' GemStone/S VM
+mruby, an implementation designed to be embedded into C code, in a similar vein to Lua. It is currently being developed by Yukihiro Matsumoto and others
+RGSS, or Ruby Game Scripting System, a proprietary implementation that is used by the RPG Maker series of software for game design and modification of the RPG Maker engine
+julializer, a transpiler (partial) from Ruby to Julia. It can be used for a large speedup over e.g. Ruby or JRuby implementations (may only be useful for numerical code).[60]
+Topaz, a Ruby implementation written in Python
+Opal, a web-based interpreter that compiles Ruby to JavaScript
+Other now defunct Ruby implementations were:
+
+MacRuby, a Mac OS X implementation on the Objective-C runtime. Its iOS counterpart is called RubyMotion
+IronRuby an implementation on the .NET Framework
+Cardinal, an implementation for the Parrot virtual machine
+Ruby Enterprise Edition, often shortened to ree, an implementation optimized to handle large-scale Ruby on Rails projects
+HotRuby, a JavaScript and ActionScript implementation of the Ruby programming language
+The maturity of Ruby implementations tends to be measured by their ability to run the Ruby on Rails (Rails) framework, because it is complex to implement and uses many Ruby-specific features. The point when a particular implementation achieves this goal is called "the Rails singularity". The reference implementation, JRuby, and Rubinius[61] are all able to run Rails unmodified in a production environment.
