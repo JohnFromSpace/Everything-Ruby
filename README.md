@@ -11,7 +11,8 @@ After the release of Ruby 0.95 in 1995, several stable versions of Ruby were rel
 * Ruby 1.0: December 25, 1996 <br>
 * Ruby 1.2: December 1998 <br>
 * Ruby 1.4: August 1999 <br>
-* Ruby 1.6: September 2000 <br>
+* Ruby 1.6: September 2000
+
 In 1997, the first article about Ruby was published on the Web. In the same year, Matsumoto was hired by netlab.jp to work on Ruby as a full-time developer. <br>
 <br>
 In 1998, the Ruby Application Archive was launched by Matsumoto, along with a simple English-language homepage for Ruby. <br>
