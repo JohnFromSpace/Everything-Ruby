@@ -22,7 +22,7 @@ In 1999, the first English language mailing list ruby-talk began, which signaled
 By 2000, Ruby was more popular than Python in Japan. In September 2000, the first English language book Programming Ruby was printed, which was later freely released to the public, further widening the adoption of Ruby amongst English speakers. In early 2002, the English-language ruby-talk mailing list was receiving more messages than the Japanese-language ruby-list, demonstrating Ruby's increasing popularity in the non-Japanese speaking world. <br>
 
 ### Ruby 1.8 and 1.9
-Ruby 1.8 was initially released August 2003, was stable for a long time, and was retired June 2013.[22] Although deprecated, there is still code based on it. Ruby 1.8 is only partially compatible with Ruby 1.9. <br>
+Ruby 1.8 was initially released August 2003, was stable for a long time, and was retired June 2013. Although deprecated, there is still code based on it. Ruby 1.8 is only partially compatible with Ruby 1.9. <br>
 
 Ruby 1.8 has been the subject of several industry standards. The language specifications for Ruby were developed by the Open Standards Promotion Center of the Information-Technology Promotion Agency (a Japanese government agency) for submission to the Japanese Industrial Standards Committee (JISC) and then to the International Organization for Standardization (ISO). It was accepted as a Japanese Industrial Standard (JIS X 3017) in 2011 and an international standard (ISO/IEC 30170) in 2012. <br>
 
